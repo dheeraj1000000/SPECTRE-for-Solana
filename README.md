@@ -85,6 +85,8 @@ file's header comment documents the expected detection trace. They are
 suitable for reproducing detector behaviour in a SPECTRE rule-pack test
 harness or for benchmarking other Solana / Anchor static-analysis tools.
 
+Brought to you by RHINO, GHOST PEPPA, and BRAVEHEART @ Team Pinpoint.
+
 ## License
 
 MIT — see [LICENSE](./LICENSE).
