@@ -10,6 +10,10 @@ This repository hosts **public artifacts** from SPECTRE for Solana:
 sample audit packs, a corpus-scan findings report, and bench fixtures
 for our Token-2022 detectors. The pipeline itself is proprietary.
 
+The latest public evidence update covers the **September 14–October 12,
+2026 hackathon window**. It summarizes shipped milestones and aggregate
+benchmark results without publishing the proprietary scanner source.
+
 ## Repository map
 
 ```
@@ -19,7 +23,9 @@ for our Token-2022 detectors. The pipeline itself is proprietary.
 │   ├── 260511-SPECTRE-AUDIT-METAPLEX-BUBBLEGUM-V1.zip
 │   └── 260511-SPECTRE-AUDIT-TENSOR-MARKETPLACE-V1.zip
 ├── reports/
-│   └── spectre-corpus-scan-2026-05-09.md       # 55-protocol corpus scan, full findings
+│   ├── hackathon-progress-2026-09-14-to-2026-10-12.md
+│   │                                             # Public milestone + benchmark summary
+│   └── spectre-corpus-scan-2026-05-09.md        # 55-protocol corpus scan, full findings
 ├── fixtures/
 │   └── token2022/                              # Single-file Rust bench fixtures
 │       ├── fee-transfer-tok023-{vuln,safe}.rs
@@ -31,10 +37,29 @@ for our Token-2022 detectors. The pipeline itself is proprietary.
 
 **For reviewers in a hurry:**
 
+- Want the hackathon-window progress and latest benchmark snapshot?
+  → [`reports/hackathon-progress-2026-09-14-to-2026-10-12.md`](./reports/hackathon-progress-2026-09-14-to-2026-10-12.md)
 - Want a deliverable example? → [`audits/`](./audits/)
 - Want the breadth-of-coverage evidence? → [corpus scan](#corpus-scan-2026-05-09)
 - Want to see detectors fire against known-vuln/known-safe code?
   → [`fixtures/token2022/`](./fixtures/token2022/)
+
+## Hackathon update (September 14–October 12, 2026)
+
+During this reporting window, Team Pinpoint released SPECTRE CLI 1.6.9,
+regenerated the Solana benchmark against a 72-entry corpus, corrected
+path-resolution and corpus-subpath issues, and recorded per-rule precision
+and recall for both Anchor and native-program coverage.
+
+The September 18 benchmark snapshot reported **53 TP / 68 FP / 14 FN** for
+the 11-rule strict set: **0.438 precision, 0.791 recall, and 0.564 F1**. The
+full `all` profile intentionally includes experimental rules and measured
+67 TP / 2,939 FP / 55 FN; those results are published as a tuning baseline,
+not a production-quality claim.
+
+See the [hackathon progress report](./reports/hackathon-progress-2026-09-14-to-2026-10-12.md)
+for the dated milestone trail, methodology, limitations, and public/private
+boundary.
 
 ## How SPECTRE works
 
